@@ -1,6 +1,6 @@
 /* DRV8334.c
 Author: PEBS
-DRV8334 motor driver IC library for stm32cubemx HAL
+DRV8334 motor driver IC library for stm32 HAL
 Will be used in PBSESC, and future proyects such as PEBS_X LV inverter.
 Im spanish so you will find some comments in spanish, as expected.
 Register maps are defined with unions, that way you can acccdss the whole register easilt.
