@@ -35,8 +35,8 @@ static HAL_StatusTypeDef DRV8334_SPI_TransmitReceive(DRV8334_t *drv,
   return HAL_SPI_TransmitReceive(drv->hspi, txData, rxData, size,
                                  MAX_SPI_TIMEOUT);
 }
-/* CRC8: poly 0x2F, init 0xFF, no final XOR, MSB first.
-   Covers command + data (3 bytes): 38 00 09 -> 6E */
+/* CRC8: poly 0x2F, init 0xFF, no final XOR, MSB first, this is from DRV8334 datasheet
+   Covers command + data (3 bytes), validated with datasheet example 38 00 09 -> 6E (also provided)*/
 static uint8_t DRV8334_CalculateCRC(const uint8_t *data, uint16_t length) {
   uint8_t crc = 0xFF; // Initial value
   for (uint16_t i = 0; i < length; i++) {

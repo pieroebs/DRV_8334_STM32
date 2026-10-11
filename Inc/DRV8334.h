@@ -41,7 +41,7 @@ typedef struct{
     GPIO_TypeDef* DRV8334_CS_GPIO_Port;
     SPI_HandleTypeDef* hspi;
     uint8_t crc_enabled;  // 1 after power-up (SPI_CRC_EN reset value is 1)
-    uint8_t last_status;  // first SDO byte: bit7 = FAULT, bits 6..0 = address echo
+    uint8_t last_status;  // first SDO byte, bit7 = FAULT, bits 6..0 = address echo
 } DRV8334_t;
 
 
